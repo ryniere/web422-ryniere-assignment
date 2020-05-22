@@ -4,8 +4,8 @@
 * No part of this assignment has been copied manually or electronically from any other source
 * (including web sites) or distributed to other students.
 *
-* Name: Ryniere dos Santos Silva Student ID: 138888185 Date: 05/21/2020
-* Heroku Link: https://floating-peak-55109.herokuapp.com/
+* Name: Ryniere dos Santos Silva Student IgD: 138888185 Date: 05/21/2020
+* Heroku Link: https://web422-ryniere-assignment.herokuapp.com/
 *
 ********************************************************************************/ 
 
