@@ -13,6 +13,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const dataService = require("./modules/data-service.js");
+const fs = require('fs');
 
 const myData = dataService("mongodb+srv://test:test@cluster0-3byiu.mongodb.net/sample_supplies?retryWrites=true&w=majority");
 
@@ -21,10 +22,27 @@ const app = express();
 app.use(cors());
 
 app.use(bodyParser.json());
+app.use(express.static("."));
 
 const HTTP_PORT = process.env.PORT || 8080;
 
 // ************* API Routes
+
+app.get('/', (req, res) => {
+
+  fs.readFile('./index.html', (err, data)=> {
+      if(err) {
+          
+      } else {
+          res.setHeader('content-type', 'text/html');
+          res.write(data);
+          res.end();
+      }
+      
+  });
+  
+})
+
 
 // POST /api/sales (NOTE: This route must read the contents of the request body)
 
