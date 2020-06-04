@@ -1,3 +1,14 @@
+/*********************************************************************************
+* WEB422 – Assignment 2
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+*
+* Name: Ryniere dos Santos Silva Student ID: 138888185 Date: 06/03/2020
+*
+*
+********************************************************************************/ 
+
 let saleData=[];
 let pageNumber=1;
 const perPage=10;
@@ -68,7 +79,19 @@ const saleTableTemplate = _.template(`<% saleData.forEach(function (sale){ %>
     $(".modal-title").html(`Sale: ${rowId}`);
 
      console.log("table row clicked!");
-});
+    });
+
+    $("#previous-page").on("click", "", function() { 
+       if (pageNumber > 1) {
+        pageNumber--;
+        loadSaleData();
+       }
+    });
+
+    $("#next-page").on("click", "", function() { 
+        pageNumber++;
+        loadSaleData();
+     });
 
 
   }); 
